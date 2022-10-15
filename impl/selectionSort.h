@@ -19,8 +19,9 @@ class SelectionSort : public Sort
 {
 public:
 	SelectionSort(std::vector<int>& vecData)
-		:Sort(vecData)
-	{}
+		:Sort(vecData, sort::SORT_TYPE::SORT_SELECT)
+	{
+	}
 
 	void sort() final
 	{
@@ -47,7 +48,7 @@ public:
 			int tmpValue = m_vecData[j];
 			m_vecData[j] = m_vecData[small];
 			m_vecData[small] = tmpValue;
-			show();
+			//show();
 		}
 	}
 

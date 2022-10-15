@@ -19,8 +19,10 @@ class ShellSort : public Sort
 {
 public:
 	ShellSort(std::vector<int>& vecData)
-		:Sort(vecData)
-	{}
+		:Sort(vecData, sort::SORT_TYPE::SORT_SHELL)
+	{
+	}
+
 
 	//void sort() final
 	//{

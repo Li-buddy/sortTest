@@ -1,9 +1,9 @@
 #pragma once
 
 #include <chrono>
-#include "isort.h"
 #include <iostream>
 #include <string>
+#include "isort.h"
 
 struct PerformanceResult
 {
@@ -44,6 +44,6 @@ public:
 	}
 
 private:
-	ISort* const      m_pSort = nullptr;   // pointer to sort algorithm
+	ISort* const      m_pSort{nullptr};   // pointer to sort algorithm
 	PerformanceResult m_performance;
 };

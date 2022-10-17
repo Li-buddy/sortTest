@@ -2,12 +2,15 @@
 //
 
 #include <chrono>
-#include "sortTest.h"
+
 #include "impl/selectionSort.h"
 #include "impl/bubbleSort.h"
 #include "impl/insertSort.h"
 #include "impl/shellSort.h"
 #include "impl/quickSort.h"
+#include "impl/heapSort.h"
+
+
 #include "benchmark.h"
 
 using namespace std;
@@ -45,10 +48,18 @@ int main()
 	{
 		std::vector<int> testData{ 5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6,5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6 };
 
+		HeapSort hst(testData);
+		BenchMark mark(&hst);
+		mark.measure();
+	}
+	{
+		std::vector<int> testData{ 5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6,5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6 };
+
 		QuickSort qst(testData);
 		BenchMark mark(&qst);
 		mark.measure();
 	}
+
 
 	return 0;
 }

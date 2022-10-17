@@ -8,6 +8,7 @@ namespace sort {
 		SORT_SELECT,
 		SORT_INSERT,
 		SORT_SHELL,
+		SORT_HEAP,
 		SORT_QUICK
 	};
 

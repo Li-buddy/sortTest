@@ -50,6 +50,8 @@ protected:
 			return std::string("Insert Sort");
 		case sort::SORT_TYPE::SORT_SHELL:
 			return std::string("Shell Sort");
+		case sort::SORT_TYPE::SORT_HEAP:
+			return std::string("Heap Sort");
 		case sort::SORT_TYPE::SORT_QUICK:
 			return std::string("Quick Sort");
 		default:

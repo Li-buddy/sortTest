@@ -45,13 +45,7 @@ int main()
 		BenchMark mark(&qst);
 		mark.measure();
 	}
-	{
-		std::vector<int> testData{ 5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6,5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6 };
-
-		HeapSort hst(testData);
-		BenchMark mark(&hst);
-		mark.measure();
-	}
+	
 	{
 		std::vector<int> testData{ 5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6,5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6 };
 
@@ -60,6 +54,14 @@ int main()
 		mark.measure();
 	}
 
+	{
+		std::vector<int> testData{ 5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6,5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6 };
+
+		HeapSort hst(testData);
+		BenchMark mark(&hst);
+
+		mark.measure();
+	}
 
 	return 0;
 }

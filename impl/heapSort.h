@@ -15,7 +15,7 @@ public:
 	{
 		//本质是节点与两个子节点比较大小，最大者作为父节点
 		int tmp = m_vecData[nIndex];
-
+		bool isHeap = false;
 		//对该节点的左右节点进行判断
 		for (int j = 2 * nIndex+1; j <= endPos; j *= 2)
 		{
@@ -30,8 +30,13 @@ public:
 			//如果新节点小于，则进行交换
 			m_vecData[nIndex] = m_vecData[j];
 			nIndex = j;
+			isHeap = true;
 		}
 		m_vecData[nIndex] = tmp;
+		if (isHeap)
+		{
+			heapify(nIndex, endPos);
+		}
 	}
 
 	void sort()

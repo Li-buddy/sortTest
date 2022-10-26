@@ -33,7 +33,6 @@ public:
 			nIndex = nLeft;
 		}
 		m_vecData[nIndex] = tmp;
-		show();
 	}
 
 	void sort()

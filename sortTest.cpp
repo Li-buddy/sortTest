@@ -17,7 +17,7 @@ using namespace std;
 
 int main()
 {
-	{
+	/*{
 		std::vector<int> testData{ 5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6,5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6,5,6,8,4,2,3,1,2,5,3,7,8,9,5,6,8,4,2,3,1,2,5,3,7,8,9,6 };
 
 		BubbleSort qst(testData);
@@ -62,7 +62,12 @@ int main()
 
 		mark.measure();
 		hst.show();
-	}
+	}*/
+
+	std::vector<int> testData{ 6,7,1,3,8,2,5 };
+
+	HeapSort hst(testData);
+	hst.sort();
 
 	return 0;
 }

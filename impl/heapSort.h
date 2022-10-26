@@ -15,28 +15,25 @@ public:
 	{
 		//本质是节点与两个子节点比较大小，最大者作为父节点
 		int tmp = m_vecData[nIndex];
-		bool isHeap = false;
 		//对该节点的左右节点进行判断
-		for (int j = 2 * nIndex+1; j <= endPos; j *= 2)
+		int nLeft = 2 * nIndex + 1;
+		int nright = nLeft + 1;
+		for (nLeft; nLeft <= endPos; nLeft *= 2+1)  // move to child layer
 		{
-			if (j < endPos && m_vecData[j] < m_vecData[j + 1])
+			if (nLeft < endPos && m_vecData[nLeft] < m_vecData[nright])
 			{
-				++j;
+				++nLeft;
 			}
 			//如果新节点大于两个子节点则不需要交换
-			if (tmp >= m_vecData[j])
+			if (tmp >= m_vecData[nLeft])
 				break;
 
 			//如果新节点小于，则进行交换
-			m_vecData[nIndex] = m_vecData[j];
-			nIndex = j;
-			isHeap = true;
+			m_vecData[nIndex] = m_vecData[nLeft];
+			nIndex = nLeft;
 		}
 		m_vecData[nIndex] = tmp;
-		if (isHeap)
-		{
-			heapify(nIndex, endPos);
-		}
+		show();
 	}
 
 	void sort()
@@ -48,7 +45,7 @@ public:
 		}
 
 		// 从最后一个非叶子节点开始  
-		for (int i = nCount / 2; i >= 0; i--)
+		for (int i = nCount / 2-1; i >= 0; i--)
 		{
 			heapify(i, nCount-1);
 		}
